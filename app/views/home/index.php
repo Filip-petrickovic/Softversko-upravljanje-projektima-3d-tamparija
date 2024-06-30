@@ -1,1 +1,1 @@
-Hello <?=$data['user']->name?>
+Hello <?=$data['user']->username?>

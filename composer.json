@@ -1,0 +1,21 @@
+{
+    "name": "filipp/autoplacmvcprojekat",
+    "type": "project",
+    "require": {
+        "illuminate/database": "^11.13"
+    },
+    "autoload": {
+        "psr-4": {
+            "Filipp\\Autoplacmvcprojekat\\": "src/"
+        },
+        "classmap": [
+            "app/models"
+        ]
+    },
+    "authors": [
+        {
+            "name": "Filip-petrickovic",
+            "email": "filip.petrickovic@gmail.com"
+        }
+    ]
+}

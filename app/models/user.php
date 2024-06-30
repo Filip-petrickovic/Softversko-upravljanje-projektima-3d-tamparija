@@ -1,10 +1,23 @@
 <?php
 
-class User
+use Illuminate\Database\Eloquent\Model as Eloquent;
+
+class User extends Eloquent
 {
-    public $id;
-    public $username;
-    public $email;
-    private $password;
-    
+    protected $table = 'users';
+
+    protected $primaryKey = 'id';
+
+    protected $fillable = ['username', 'email', 'password'];
+
+    protected $hidden = ['password'];
+
+    public function getUsernameAttribute($value) {
+        return $this->attributes['username'];
+    }
+
+    public function getEmailAttribute($value) {
+        return $this->attributes['email'];
+    }
+
 }
