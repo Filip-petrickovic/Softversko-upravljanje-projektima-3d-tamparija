@@ -1,5 +1,8 @@
 <?php
 
+if (session_status() == PHP_SESSION_NONE) {
+    session_start();
+}
 use Illuminate\Database\Capsule\Manager as Capsule;
 
 $capsule = new Capsule();
