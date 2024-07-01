@@ -5,7 +5,7 @@ document.getElementById('loginForm').addEventListener('submit', async function(e
     const pass = document.getElementById('pass').value;
 
     try {
-        const response = await fetch('/autoplac%20mvc%20projekat/public/users/login', {
+        const response = await fetch('/public/users/login', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/x-www-form-urlencoded',
@@ -19,7 +19,7 @@ document.getElementById('loginForm').addEventListener('submit', async function(e
         document.getElementById('passError').textContent = '';
         
         if (data.success) {
-            window.location.href = '../..';
+            window.location.href = '../';
         } else {
             if (data.errors.email) {
                 document.getElementById('emailError').textContent = data.errors.email;

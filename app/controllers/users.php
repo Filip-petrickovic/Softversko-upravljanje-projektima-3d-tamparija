@@ -11,7 +11,7 @@ class Users extends Controller
 
     public function index(){
         session_destroy();
-        header('Location: /autoplac%20mvc%20projekat/public/home/index');
+        header('Location: /public/home');
     }
 
     public function login(){

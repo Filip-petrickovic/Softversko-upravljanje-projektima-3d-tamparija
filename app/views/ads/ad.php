@@ -6,7 +6,7 @@
     <title>Auto Plac</title>
     <link href="https://fonts.googleapis.com/css?family=Noto+Sans|Roboto+Mono|Work+Sans:400,700&display=swap" rel="stylesheet">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
-    <link rel="stylesheet" href="/autoplac%20mvc%20projekat/public/css/style.css">
+    <link rel="stylesheet" href="/public/css/style.css">
 </head>
 <body>
     
@@ -68,11 +68,11 @@
                             <?php 
                                 echo '<div class="row mt-5 pt-5 col-12">';
                                 echo '<div class="col-12  col-md-6 mt-3 mb-3 mt-md-0 mb-md-0">
-                                    <a type="button" class=" container-fluid btn rounded btn-secondary  " href="/autoplac%20mvc%20projekat/public/ads" >Oglasi</a>
+                                    <a type="button" class=" container-fluid btn rounded btn-secondary  " href="/public/ads" >Oglasi</a>
                                 </div>';
                                 if(isset($_SESSION['email']) && !empty($_SESSION['email'])){
                                     echo '<div class="col-12  col-md-6 mt-3 mb-3 mt-md-0 mb-md-0">
-                                        <a type="button" class=" container-fluid btn rounded btn-primary" href="/autoplac%20mvc%20projekat/public/ads/order/'.$data['oglas']['id'].'" >Naruci</a>
+                                        <a type="button" class=" container-fluid btn rounded btn-primary" href="/public/ads/order/'.$data['oglas']['id'].'" >Naruci</a>
                                     </div>';
                                 }
                                 echo '</div>';

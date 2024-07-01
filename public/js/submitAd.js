@@ -8,7 +8,7 @@ document.getElementById('adForm').addEventListener('submit', function(event) {
     .then(response => response.json())
     .then(data => {
         if (data.success) {
-            location.href= "/autoplac%20mvc%20projekat/public/"
+            location.href= "/public/"
         } else {
             if (data.errors) {
                 // Display validation errors

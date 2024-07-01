@@ -7,7 +7,7 @@
     <title>Auto Plac</title>
     <link href="https://fonts.googleapis.com/css?family=Noto+Sans|Roboto+Mono|Work+Sans:400,700&display=swap" rel="stylesheet">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
-    <link rel="stylesheet" href="/autoplac%20mvc%20projekat/public/css/style.css">
+    <link rel="stylesheet" href="/public/css/style.css">
 </head>
 <body>
     
@@ -66,11 +66,11 @@
                         echo '</div>';
                         echo '<div class="row col-12">';
                         echo '<div class="col-12  col-md-6 mt-2 mb-2 mt-md-0 mb-md-0">';
-                        echo '<a type="button" class="container-fluid btn rounded btn-secondary" href="/autoplac%20mvc%20projekat/public/ads/ad/'.$data['oglasi'][$i]->id.'">Detalji</a>';
+                        echo '<a type="button" class="container-fluid btn rounded btn-secondary" href="/public/ads/ad/'.$data['oglasi'][$i]->id.'">Detalji</a>';
                         echo '</div>';
                         if(isset($data['user']->username)&& !empty($data['user']->username)){
                             echo '<div class="col-12  col-md-6 mr-10">';
-                            echo '<a type="button" class="container-fluid btn rounded btn-primary" href="/autoplac%20mvc%20projekat/public/ads/order/'.$data['oglasi'][$i]->id.'">Naruči</a>';
+                            echo '<a type="button" class="container-fluid btn rounded btn-primary" href="/public/ads/order/'.$data['oglasi'][$i]->id.'">Naruči</a>';
                             echo '</div>';
                         }
                         echo '</div>';
@@ -96,10 +96,10 @@
                                 // Ako je prijavljen, prikazuje se opcija za pregled oglasa i narudžbina
                                 echo '
                                 <div class="mt-4 mb-4">
-                                    <a type="button" class="container-fluid btn rounded btn-primary" href="./oglasi.php" >Oglasi</a>
+                                    <a type="button" class="container-fluid btn rounded btn-primary" href="/public/ads" >Oglasi</a>
                                 </div>
                                 <div class="mt-4 mb-4" >
-                                    <a  href="./narudzbine.php" class="border-none container-fluid btn rounded btn-secondary">Narudzbine</a>
+                                    <a  href="/public/ads/orders" class="border-none container-fluid btn rounded btn-secondary">Narudzbine</a>
                                 </div>';
                             }
                             else

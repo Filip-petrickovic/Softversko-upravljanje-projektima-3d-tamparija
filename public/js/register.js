@@ -55,7 +55,7 @@ document.addEventListener("DOMContentLoaded", function() {
         const formData = new FormData(registerForm);
         try {
             // Send POST request to server
-            const response = await fetch('/autoplac%20mvc%20projekat/public/users/register', {
+            const response = await fetch('/public/users/register', {
                 method: 'POST',
                 body: formData
             });

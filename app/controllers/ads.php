@@ -117,13 +117,13 @@ class Ads extends Controller
         $order = Order::where('oglas_id', $id)->first();
 
         if (!$order) {
-            header("Location: /autoplac%20mvc%20projekat/public/ads");
+            header("Location: /public/ads");
             exit;
         }
 
         // Delete the order
         $order->delete();
-        header("Location: /autoplac%20mvc%20projekat/public/ads");
+        header("Location: /public/ads");
     }
     public function ad($id) {
         $this->model('ad');
@@ -183,7 +183,7 @@ class Ads extends Controller
                     // Redirect or display success message after creating the order
 
                     // Return the view with orders data
-                    header("Location: /autoplac%20mvc%20projekat/public/ads/orders");
+                    header("Location: /public/ads/orders");
                 } else {
                     echo "Ad not found"; // Handle case where ad is not found
                 }
