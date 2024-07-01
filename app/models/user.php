@@ -24,5 +24,13 @@ class User extends Eloquent
     {
         return $this->hasMany(Ad::class, 'kreator_id');
     }
+    
+    public function orders()
+    {
+        return $this->hasMany(Order::class, 'user_id');
+    }
 
+    public function verifyPassword($password) {
+        return password_verify($password, $this->attributes['password']);
+    }
 }
