@@ -53,14 +53,14 @@
                     echo '<div class="col-md-4 col-sm-7 col-10">';
                     if(isset($_SESSION["email"])){
                         echo '<div class="mt-4 mb-4">';
-                        echo '<a type="button" class="container-fluid btn rounded btn-primary" href="./index.php">Početna</a>';
+                        echo '<a type="button" class="container-fluid btn rounded btn-primary" href="/autoplac%20mvc%20projekat/public/">Početna</a>';
                         echo '</div>';
                         echo '<div class="mt-4 mb-4">';
-                        echo '<a href="./narudzbine.php" class="border-none container-fluid btn rounded btn-secondary">Narudžbine</a>';
+                        echo '<a href="/autoplac%20mvc%20projekat/public/ads/orders" class="border-none container-fluid btn rounded btn-secondary">Narudžbine</a>';
                         echo '</div>';
                     } else {
                         echo '<div class="mt-4 mb-4">';
-                        echo '<a type="button" class="container-fluid btn rounded btn-primary" href="./index.php">Početna</a>';
+                        echo '<a type="button" class="container-fluid btn rounded btn-primary" href="/autoplac%20mvc%20projekat/public/">Početna</a>';
                         echo '</div>';
                     }
                     echo '</div>';
