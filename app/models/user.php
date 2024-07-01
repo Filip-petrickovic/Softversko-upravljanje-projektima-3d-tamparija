@@ -20,4 +20,9 @@ class User extends Eloquent
         return $this->attributes['email'];
     }
 
+    public function ads()
+    {
+        return $this->hasMany(Ad::class, 'kreator_id');
+    }
+
 }

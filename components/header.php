@@ -1,7 +1,7 @@
 <header>
         <nav style="box-sizing: border-box;border-bottom: 1px solid #E6E8EB;" class="navbar navbar-expand-md navbar-toggleable-md navbar-light bg-white box-shadow mb-3">
             <div class="container-fluid">
-                <a href="index.php" class="navbar-brand"><img class="logo" src="./img/logo.png" alt="logo"></a>
+                <a href="index.php" class="navbar-brand"><img class="logo" src="/autoplac%20mvc%20projekat/public/img/logo.png" alt="logo"></a>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target=".navbar-collapse" aria-controls="navbarSupportedContent"
                         aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>

@@ -7,12 +7,12 @@
     <title>Auto Plac</title>
     <link href="https://fonts.googleapis.com/css?family=Noto+Sans|Roboto+Mono|Work+Sans:400,700&display=swap" rel="stylesheet">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
-    <link rel="stylesheet" href="/css/style.css" />
+    <link rel="stylesheet" href="/autoplac%20mvc%20projekat/public/css/style.css">
 </head>
 <body>
     
 <?php 
-        include("../components/header.php");
+        include(__DIR__ . '/../../../components/header.php');
         ?>
     <div class="container">
         <main role="main" class="pb-3">
@@ -24,7 +24,7 @@
                         <div class="row flex justify-content-start">
                             <?php 
                                  // Provera da li je korisnik prijavljen
-                                if(isset($_SESSION["email"])){
+                                if(isset($data['user']->username)){
                                     // Ako je prijavljen, prikazuje se opcija za pregled oglasa i narudžbina
                                     echo '
                                         <div class="col-5 col-md-2 mr-10">
@@ -52,49 +52,30 @@
             </div>
             <div class="container mb-5 flex row">
             <?php 
-                // Uključivanje konekcije na bazu podataka
-                include('./database/connect.php');
-
-                // SQL upit za dohvatanje premijum oglasa koji nisu naručeni
-                $sql = 'SELECT oglasi.id, oglasi.naslov, oglasi.cena, oglasi.marka, oglasi.model, oglasi.url_slike, oglasi.godina
-                        FROM oglasi
-                        LEFT JOIN narudzbina ON oglasi.id = narudzbina.oglas_id
-                        WHERE narudzbina.oglas_id IS NULL AND oglasi.premium=1;';
-
-                // Izvršavanje SQL upita
-                $result= $conn->query($sql);
-
-                // Provera rezultata upita
-                if($result->num_rows > 0) {
-                    // Prikazivanje rezultata u petlji
-                    while($row = $result->fetch_assoc()) {
-                        // Prikazivanje pojedinačnog premijum oglasa
+                    for($i=0;$i<count($data['oglasi']);$i++) {
+                        //Prikazivanje pojedinačnog premijum oglasa
                         echo '<div class="col-12 col-md-6 col-lg-3 justify-content-md-start justify-content-center align-items-md-start align-items-center text-md-left text-center d-flex flex-column">';
                         echo '<div class="rounded col-12 mb-2 mt-2">';
-                        echo '<img class="slika" src="images/'.$row['url_slike'].'" alt="'.$row['url_slike'].'">';
+                        echo '<img class="slika" src="images/'.$data['oglasi'][$i]->url_slike.'" alt="'.$data['oglasi'][$i]->url_slike.'">';
                         echo '</div>';
                         echo '<div class="naslov col-12 mb-2 mt-2">';
-                        echo '<p>'.$row['naslov'].'</p>';
+                        echo '<p>'.$data['oglasi'][$i]->naslov.'</p>';
                         echo '</div>';
                         echo '<div class="cena col-12 mb-2 mt-2">';
-                        echo '<p>$'.$row['cena'].'</p>';
+                        echo '<p>$'.$data['oglasi'][$i]->cena.'</p>';
                         echo '</div>';
                         echo '<div class="row col-12">';
                         echo '<div class="col-12  col-md-6 mt-2 mb-2 mt-md-0 mb-md-0">';
-                        echo '<a type="button" class="container-fluid btn rounded btn-secondary" href="./oglas.php?id='.$row['id'].'">Detalji</a>';
+                        echo '<a type="button" class="container-fluid btn rounded btn-secondary" href="./oglas.php?id='.$data['oglasi'][$i]->id.'">Detalji</a>';
                         echo '</div>';
-                        if(isset($_SESSION['email']) && !empty($_SESSION['email'])){
+                        if(isset($data['user']->username)&& !empty($data['user']->username)){
                             echo '<div class="col-12  col-md-6 mr-10">';
-                            echo '<a type="button" class="container-fluid btn rounded btn-primary" href="./naruci.php?id='.$row['id'].'">Naruči</a>';
+                            echo '<a type="button" class="container-fluid btn rounded btn-primary" href="./naruci.php?id='.$data['oglasi'][$i]->id.'">Naruči</a>';
                             echo '</div>';
                         }
                         echo '</div>';
                         echo '</div>';
                     }
-                } else {  
-                    // Prikazivanje poruke kada nema dostupnih premijum oglasa
-                    echo '<p class="header">Nema premium oglasa u bazi</p>';
-                }
             ?>
             </div>
             <div class="container mt-5 mb-5 flex flex-column">
@@ -111,7 +92,7 @@
                     <div class="col-md-4 col-sm-7 col-10">
                         <?php 
                             // Provera da li je korisnik prijavljen
-                            if(isset($_SESSION["email"])){
+                            if(isset($data['user']->username)){
                                 // Ako je prijavljen, prikazuje se opcija za pregled oglasa i narudžbina
                                 echo '
                                 <div class="mt-4 mb-4">
