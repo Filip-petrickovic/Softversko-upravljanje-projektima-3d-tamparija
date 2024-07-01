@@ -66,11 +66,11 @@
                         echo '</div>';
                         echo '<div class="row col-12">';
                         echo '<div class="col-12  col-md-6 mt-2 mb-2 mt-md-0 mb-md-0">';
-                        echo '<a type="button" class="container-fluid btn rounded btn-secondary" href="./oglas.php?id='.$data['oglasi'][$i]->id.'">Detalji</a>';
+                        echo '<a type="button" class="container-fluid btn rounded btn-secondary" href="/autoplac%20mvc%20projekat/public/ads/ad/'.$data['oglasi'][$i]->id.'">Detalji</a>';
                         echo '</div>';
                         if(isset($data['user']->username)&& !empty($data['user']->username)){
                             echo '<div class="col-12  col-md-6 mr-10">';
-                            echo '<a type="button" class="container-fluid btn rounded btn-primary" href="./naruci.php?id='.$data['oglasi'][$i]->id.'">Naruči</a>';
+                            echo '<a type="button" class="container-fluid btn rounded btn-primary" href="/autoplac%20mvc%20projekat/public/ads/order/'.$data['oglasi'][$i]->id.'">Naruči</a>';
                             echo '</div>';
                         }
                         echo '</div>';

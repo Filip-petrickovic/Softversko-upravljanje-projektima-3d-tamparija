@@ -6,6 +6,8 @@ class Order extends Eloquent
 {
     protected $table = 'narudzbina'; // Table name as per your SQL dump
 
+    protected $primaryKey = 'oglas_id';
+
     protected $fillable = ['user_id', 'oglas_id', 'dan_narucivanja']; // Fillable fields from the table
 
     public $timestamps = false; // Assuming 'dan_narucivanja' is handled by the database as timestamp

@@ -9,21 +9,21 @@
                 <div class="navbar-collapse collapse d-md-inline-flex justify-content-end">
                     <ul class="navbar-nav flex-grow-1 justify-content-end">
                         <li class="nav-item ms-3 me-3">
-                            <a href="home" class="nav-link text-dark">Početna</a>
+                            <a href="/autoplac%20mvc%20projekat/public/home" class="nav-link text-dark">Početna</a>
                         </li>
                         <li class="nav-item ms-3 me-3">
-                            <a href="oglasi.php" class="nav-link text-dark">Oglasi</a>
+                            <a href="/autoplac%20mvc%20projekat/public/ads" class="nav-link text-dark">Oglasi</a>
                             
                         </li>
                         <?php 
                             if(isset($_SESSION['email'])){
                                 echo '
                                 <li class="nav-item ms-3 me-3">
-                                    <a href="objavi.php" class="nav-link text-dark">Objavi auto</a>
+                                    <a href="/autoplac%20mvc%20projekat/public/ads/objavi" class="nav-link text-dark">Objavi auto</a>
                                 </li>
                                 ';
                                 echo '<li class="ms-md-3 me-md-3 mt-2 mb-2 mt-md-0 mb-md-0 nav-item">
-                                    <a href="./narudzbine.php" type="button" style="padding:7px"  class="btn rounded btn-secondary ">Narudzbine</a>
+                                    <a href="/autoplac%20mvc%20projekat/public/ads/orders" type="button" style="padding:7px"  class="btn rounded btn-secondary ">Narudzbine</a>
                                 </li>';
                                 echo '<li class="ms-md-3 me-md-3 mt-2 mb-2 mt-md-0 mb-md-0  nav-item">
                                     <a type="button" class="btn rounded btn-primary" style="padding:7px" href="./users/logout" >Odjavi se</a>

@@ -14,7 +14,10 @@ class Home extends Controller{
         if(isset($_SESSION['email']) && !empty($_SESSION['email'])) {
             $user = User::where('email', $_SESSION['email'])->first();
         }
-        $oglasi= Ad::where('premium', 1)->get();
+        $oglasi= Ad::where('premium', 1)->whereNotIn('id', function($query) {
+            $query->select('oglas_id')->from('narudzbina');
+        })
+        ->get();
         // Return the view with the user data
         return $this->view('home/index', array('user' => $user,'oglasi' => $oglasi));
     }

@@ -22,25 +22,25 @@
                     for($i=0;$i<count($data['oglasi']);$i++) {
                         echo '<div class="col-12 col-md-6 col-lg-3 justify-content-md-start justify-content-center align-items-md-start align-items-center text-md-left text-center d-flex flex-column">';
                         echo '<div class="rounded col-12 mb-2 mt-2">';
-                        echo '<img class="slika" src="images/'.$data['oglasi'][$i]['url_slike'].'" alt="'.$data['oglasi'][$i]['url_slike'].'">';
+                        echo '<img class="slika" src="../images/'.$data['oglasi'][$i]['ad']['url_slike'].'" alt="'.$data['oglasi'][$i]['ad']['url_slike'].'">';
                         echo '</div>';
                         echo '<div class="naslov col-12 mb-2 mt-2">';
-                        echo '<p>'.$data['oglasi'][$i]['naslov'].'</p>';
+                        echo '<p>'.$data['oglasi'][$i]['ad']['naslov'].'</p>';
                         echo '</div>';
                         echo '<div class="naslov cena col-12 mb-2 mt-2 d-flex row">';
-                        echo '<p class="col-7">'.$data['oglasi'][$i]['marka'].' '.$data['oglasi'][$i]['model'].'</p>';
-                        echo '<p class="col-4">'.$data['oglasi'][$i]['godina'].'. god.</p>';
+                        echo '<p class="col-7">'.$data['oglasi'][$i]['ad']['marka'].' '.$data['oglasi'][$i]['ad']['model'].'</p>';
+                        echo '<p class="col-4">'.$data['oglasi'][$i]['ad']['godina'].'. god.</p>';
                         echo '</div>';
                         echo '<div class="cena col-12 mb-2 mt-2">';
-                        echo '<p>€'.$data['oglasi'][$i]['cena'].'</p>';
+                        echo '<p>€'.$data['oglasi'][$i]['ad']['cena'].'</p>';
                         echo '</div>';
                         echo '<div class="row col-12">';
                         echo '<div class="col-12  col-md-6 mt-2 mb-2 mt-md-0 mb-md-0">';
-                        echo '<a type="button" class="container-fluid btn rounded btn-secondary" href="./oglas.php?id='.$data['oglasi'][$i]['id'].'">Detalji</a>';
+                        echo '<a type="button" class="container-fluid btn rounded btn-secondary" href="/autoplac%20mvc%20projekat/public/ads/ad/'.$data['oglasi'][$i]['ad']['id'].'">Detalji</a>';
                         echo '</div>';
                         if(isset($_SESSION['email']) && !empty($_SESSION['email'])){
                             echo '<div class="col-12  col-md-6 mr-10">';
-                            echo '<a type="button" class="container-fluid btn rounded btn-primary" href="./naruci.php?id='.$data['oglasi'][$i]['id'].'">Naruči</a>';
+                            echo '<a type="button" class="container-fluid btn rounded btn-primary" href="/autoplac%20mvc%20projekat/public/ads/unorder/'.$data['oglasi'][$i]['ad']['id'].'">Otkaži</a>';
                             echo '</div>';
                         }
                         echo '</div>';
